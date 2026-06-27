@@ -7,13 +7,27 @@
     <meta name="description" content="Convert Unicode Devanagari text to AMS font encoding instantly. Free online AMS font converter for Hindi, Marathi typing. No signup required.">
     <link rel="canonical" href="https://convertamsfont.com/">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="AMS Font Converter - Free Online Unicode to AMS Converter">
     <meta property="og:description" content="Convert Unicode Devanagari to AMS font encoding instantly. Free, fast, no signup.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://convertamsfont.com/">
-    
-    <!-- Structured Data: SoftwareApplication -->
+
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AMS Font Converter",
+        "url": "https://convertamsfont.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://convertamsfont.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -29,7 +43,21 @@
         }
     }
     </script>
-    
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://convertamsfont.com/"
+        }]
+    }
+    </script>
+
     <!-- HowTo Schema -->
     <script type="application/ld+json">
     {
@@ -61,12 +89,67 @@
     }
     </script>
 
-    <!-- Hreflang for Hindi -->
     <link rel="alternate" hreflang="en" href="https://convertamsfont.com/">
     <link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/">
     <link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/">
 
     <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- AMS Font for preview -->
+    <style>
+        @font-face {
+            font-family: 'AMS_Font';
+            src: url('/fonts/ams.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        .preview-panel {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 16px;
+            box-shadow: var(--shadow);
+        }
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--border);
+        }
+        .preview-header h2 { font-size: .95rem; font-weight: 600; color: var(--text-sec); }
+        .font-selector {
+            padding: 4px 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: .85rem;
+            background: var(--bg);
+        }
+        .preview-content {
+            padding: 20px;
+            font-family: 'AMS_Font', 'Courier New', monospace;
+            font-size: 1.5rem;
+            line-height: 2;
+            min-height: 80px;
+            color: var(--text);
+            word-break: break-all;
+        }
+        .preview-content.empty { color: var(--text-sec); font-size: 1rem; }
+        .reverse-btn {
+            background: none;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: .85rem;
+            transition: all .15s;
+        }
+        .reverse-btn:hover { background: var(--primary); color: #fff; }
+    </style>
 </head>
 <body>
     <header>
@@ -75,8 +158,10 @@
                 <a href="/">AMS Font Converter</a>
             </div>
             <div class="nav-links">
-                <a href="#converter">Converter</a>
-                <a href="#how-it-works">How It Works</a>
+                <a href="/">Converter</a>
+                <a href="/ams-fonts/">Fonts</a>
+                <a href="/blog/">Blog</a>
+                <a href="/about/">About</a>
                 <a href="/hi/">हिंदी</a>
             </div>
         </nav>
@@ -90,16 +175,21 @@
 
         <section id="converter" class="converter-section">
             <div class="converter-container">
+                <!-- Direction Toggle -->
+                <div style="text-align:center;margin-bottom:8px;">
+                    <button id="reverseBtn" class="reverse-btn" title="Switch conversion direction">⇄ Switch to AMS → Unicode</button>
+                </div>
+
                 <!-- Input Area -->
                 <div class="input-panel">
                     <div class="panel-header">
-                        <h2>Unicode Devanagari Input</h2>
+                        <h2 id="inputLabel">Unicode Devanagari Input</h2>
                         <div class="toolbar">
                             <button id="pasteBtn" type="button" title="Paste from clipboard">📋 Paste</button>
                             <button id="clearInputBtn" type="button" title="Clear input">✕ Clear</button>
                         </div>
                     </div>
-                    <div class="transliteration-bar">
+                    <div id="transliterationBar" class="transliteration-bar">
                         <span class="label">Type in English:</span>
                         <div class="lang-buttons">
                             <button class="lang-btn active" data-lang="hi">Hindi</button>
@@ -119,18 +209,32 @@
                 <!-- Output Area -->
                 <div class="output-panel">
                     <div class="panel-header">
-                        <h2>AMS Font Output</h2>
+                        <h2 id="outputLabel">AMS Font Output</h2>
                         <div class="toolbar">
                             <label class="v2-toggle" title="Switch between TTF and OTF font encoding">
                                 <input type="checkbox" id="v2Toggle">
                                 <span>OTF Mode</span>
                             </label>
                             <button id="copyBtn" type="button" title="Copy to clipboard">📋 Copy</button>
+                            <button id="downloadBtn" type="button" title="Download as text file">💾 Download</button>
                             <button id="clearOutputBtn" type="button" title="Clear output">✕ Clear</button>
                         </div>
                     </div>
                     <textarea id="amsOutput" placeholder="AMS font text will appear here..." rows="8" readonly spellcheck="false"></textarea>
                     <div id="notification" class="notification"></div>
+                </div>
+
+                <!-- Preview Area -->
+                <div class="preview-panel">
+                    <div class="preview-header">
+                        <h2>Live AMS Font Preview</h2>
+                        <select id="fontSelector" class="font-selector">
+                            <option value="AMS_Font">AMS Default</option>
+                        </select>
+                    </div>
+                    <div id="previewContent" class="preview-content empty">
+                        Converted text will appear here in AMS calligraphy style...
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,8 +254,8 @@
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Copy & Use</h3>
-                    <p>Copy the AMS-encoded text and paste it into any application that uses AMS fonts. The text renders correctly when an AMS font is installed on your system.</p>
+                    <h3>Preview, Copy & Use</h3>
+                    <p>Preview the result in AMS calligraphy style right in your browser. Copy the AMS-encoded text and paste it into CorelDRAW, Photoshop, or any application that uses AMS fonts.</p>
                 </div>
             </div>
         </section>
@@ -163,33 +267,13 @@
             <h3>AMS vs Unicode: Key Differences</h3>
             <table class="comparison-table">
                 <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>AMS Font</th>
-                        <th>Unicode</th>
-                    </tr>
+                    <tr><th>Feature</th><th>AMS Font</th><th>Unicode</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Encoding</td>
-                        <td>ASCII-based (0x20-0x7E)</td>
-                        <td>Unicode (U+0900-U+097F)</td>
-                    </tr>
-                    <tr>
-                        <td>Compatibility</td>
-                        <td>Requires AMS font installed</td>
-                        <td>Universal standard</td>
-                    </tr>
-                    <tr>
-                        <td>Search Engine</td>
-                        <td>Not searchable</td>
-                        <td>Fully searchable</td>
-                    </tr>
-                    <tr>
-                        <td>Usage</td>
-                        <td>Legacy printing, DTP</td>
-                        <td>Web, modern apps</td>
-                    </tr>
+                    <tr><td>Encoding</td><td>ASCII-based (0x20-0x7E)</td><td>Unicode (U+0900-U+097F)</td></tr>
+                    <tr><td>Compatibility</td><td>Requires AMS font installed</td><td>Universal standard</td></tr>
+                    <tr><td>Search Engine</td><td>Not searchable</td><td>Fully searchable</td></tr>
+                    <tr><td>Usage</td><td>Legacy printing, DTP</td><td>Web, modern apps</td></tr>
                 </tbody>
             </table>
         </section>
@@ -197,29 +281,76 @@
         <section class="info-section">
             <h2>Supported Conversions</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <a href="/unicode-to-ams/" class="feature-card" style="text-decoration:none;color:inherit;">
                     <h3>Unicode → AMS</h3>
-                    <p>Convert standard Devanagari Unicode text to AMS font encoding. Supports all Hindi and Marathi characters including conjuncts (संयुक्ताक्षर).</p>
-                </div>
+                    <p>Convert standard Devanagari Unicode text to AMS font encoding. Supports all Hindi and Marathi characters including conjuncts.</p>
+                </a>
+                <a href="/ams-to-unicode/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>AMS → Unicode</h3>
+                    <p>Reverse convert AMS-encoded text back to Unicode Devanagari. Perfect for digitizing old documents.</p>
+                </a>
+                <a href="/krutidev-to-ams/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>KrutiDev → AMS</h3>
+                    <p>Convert from KrutiDev encoding to AMS font encoding. Migrate your old KrutiDev files easily.</p>
+                </a>
                 <div class="feature-card">
                     <h3>English → Devanagari</h3>
                     <p>Type in English and get Devanagari text instantly with our built-in transliteration feature powered by Google Input Tools.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>TTF & OTF Modes</h3>
-                    <p>Switch between AMS TTF and OTF font encoding modes. Some AMS fonts use slightly different encodings — our converter supports both.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>100% Client-Side</h3>
-                    <p>All conversion happens in your browser. Your text is never sent to any server — complete privacy guaranteed.</p>
-                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Popular AMS Fonts</h2>
+            <div class="features-grid">
+                <a href="/ams-fonts/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>AMS Manthan</h3>
+                    <p>Popular calligraphy font for Hindi wedding cards and invitations.</p>
+                </a>
+                <a href="/ams-fonts/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>AMS Shrimant</h3>
+                    <p>Elegant decorative font for festival posters and religious texts.</p>
+                </a>
+                <a href="/ams-fonts/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>AMS Mukta</h3>
+                    <p>Clean modern AMS font for professional documents.</p>
+                </a>
+                <a href="/ams-fonts/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>Browse All Fonts →</h3>
+                    <p>Download free AMS fonts for CorelDRAW, Photoshop, and more.</p>
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 ConvertAMSFont.com — Free Online AMS Font Converter</p>
-        <p class="disclaimer">This tool provides character encoding conversion only. Users are responsible for obtaining proper font licenses for any proprietary fonts they use.</p>
+        <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;text-align:left;">
+            <div>
+                <p style="font-weight:600;color:var(--text);margin-bottom:8px;">AMS Font Converter</p>
+                <p style="font-size:.85rem;">Free online tool to convert Unicode Devanagari to AMS font encoding and back.</p>
+            </div>
+            <div>
+                <p style="font-weight:600;color:var(--text);margin-bottom:8px;">Converters</p>
+                <p style="font-size:.85rem;"><a href="/" style="color:var(--text-sec);text-decoration:none;">Unicode → AMS</a></p>
+                <p style="font-size:.85rem;"><a href="/ams-to-unicode/" style="color:var(--text-sec);text-decoration:none;">AMS → Unicode</a></p>
+                <p style="font-size:.85rem;"><a href="/krutidev-to-ams/" style="color:var(--text-sec);text-decoration:none;">KrutiDev → AMS</a></p>
+            </div>
+            <div>
+                <p style="font-weight:600;color:var(--text);margin-bottom:8px;">Resources</p>
+                <p style="font-size:.85rem;"><a href="/ams-fonts/" style="color:var(--text-sec);text-decoration:none;">AMS Fonts</a></p>
+                <p style="font-size:.85rem;"><a href="/blog/" style="color:var(--text-sec);text-decoration:none;">Blog</a></p>
+                <p style="font-size:.85rem;"><a href="/about/" style="color:var(--text-sec);text-decoration:none;">About</a></p>
+            </div>
+            <div>
+                <p style="font-weight:600;color:var(--text);margin-bottom:8px;">Legal</p>
+                <p style="font-size:.85rem;"><a href="/privacy-policy/" style="color:var(--text-sec);text-decoration:none;">Privacy Policy</a></p>
+                <p style="font-size:.85rem;"><a href="/terms-of-service/" style="color:var(--text-sec);text-decoration:none;">Terms of Service</a></p>
+            </div>
+        </div>
+        <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);">
+            <p>&copy; 2026 ConvertAMSFont.com — Free Online AMS Font Converter</p>
+            <p class="disclaimer">This tool provides character encoding conversion only. Users are responsible for obtaining proper font licenses for any proprietary fonts they use.</p>
+        </div>
     </footer>
 
     <script src="/js/ams-converter-engine.js"></script>

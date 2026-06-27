@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrutiDev to AMS Converter - Free Online KrutiDev to AMS Font Converter</title>
+    <meta name="description" content="Convert KrutiDev encoded text to AMS font encoding instantly. Free online KrutiDev to AMS converter for Hindi typing. No signup required.">
+    <link rel="canonical" href="https://convertamsfont.com/krutidev-to-ams/">
+
+    <meta property="og:title" content="KrutiDev to AMS Converter - Free Online Tool">
+    <meta property="og:description" content="Convert KrutiDev text to AMS font encoding instantly. Free, fast, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://convertamsfont.com/krutidev-to-ams/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "KrutiDev to AMS Converter",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "description": "Free online converter to transform KrutiDev encoded text to AMS font encoding.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://convertamsfont.com/" },
+            { "@type": "ListItem", "position": 2, "name": "KrutiDev to AMS Converter", "item": "https://convertamsfont.com/krutidev-to-ams/" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Convert KrutiDev to AMS",
+        "description": "Convert KrutiDev encoded text to AMS font encoding.",
+        "step": [
+            { "@type": "HowToStep", "name": "Paste KrutiDev Text", "text": "Paste your KrutiDev encoded text into the input box.", "position": 1 },
+            { "@type": "HowToStep", "name": "Click Convert", "text": "Click Convert to transform KrutiDev text to AMS font encoding.", "position": 2 },
+            { "@type": "HowToStep", "name": "Copy AMS Text", "text": "Copy the resulting AMS text for use in applications that support AMS fonts.", "position": 3 }
+        ]
+    }
+    </script>
+
+    <link rel="alternate" hreflang="en" href="https://convertamsfont.com/krutidev-to-ams/">
+    <link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/krutidev-to-ams/">
+    <link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/krutidev-to-ams/">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        @font-face { font-family: 'AMS_Font'; src: url('/fonts/ams.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="/">AMS Font Converter</a></div>
+            <div class="nav-links">
+                <a href="/">Converter</a>
+                <a href="/ams-fonts/">Fonts</a>
+                <a href="/blog/">Blog</a>
+                <a href="/about/">About</a>
+                <a href="/hi/">हिंदी</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>KrutiDev to AMS Font Converter</h1>
+            <p>Convert KrutiDev encoded Hindi text to AMS font encoding instantly. Switch from KrutiDev to AMS calligraphy fonts easily.</p>
+        </section>
+
+        <section class="converter-section">
+            <div class="converter-container">
+                <div class="input-panel">
+                    <div class="panel-header">
+                        <h2>KrutiDev Input</h2>
+                        <div class="toolbar">
+                            <button id="pasteBtn" type="button">📋 Paste</button>
+                            <button id="clearInputBtn" type="button">✕ Clear</button>
+                        </div>
+                    </div>
+                    <textarea id="krutidevInput" placeholder="Paste KrutiDev text here... (e.g., egkRe fo|ky; )" rows="8" spellcheck="false" style="font-family:'Courier New',monospace;"></textarea>
+                </div>
+
+                <div class="convert-action">
+                    <button id="convertBtn" type="button" class="convert-btn">Convert → AMS</button>
+                </div>
+
+                <div class="output-panel">
+                    <div class="panel-header">
+                        <h2>AMS Font Output</h2>
+                        <div class="toolbar">
+                            <button id="copyBtn" type="button">📋 Copy</button>
+                            <button id="downloadBtn" type="button">💾 Download</button>
+                            <button id="clearOutputBtn" type="button">✕ Clear</button>
+                        </div>
+                    </div>
+                    <textarea id="amsOutput" placeholder="AMS font text will appear here..." rows="8" readonly spellcheck="false" style="font-family:'AMS_Font','Courier New',monospace;"></textarea>
+                    <div id="notification" class="notification"></div>
+                </div>
+
+                <!-- AMS Preview -->
+                <div class="preview-panel" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:16px;box-shadow:var(--shadow);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--bg-alt);border-bottom:1px solid var(--border);">
+                        <h2 style="font-size:.95rem;font-weight:600;color:var(--text-sec);">Live AMS Font Preview</h2>
+                    </div>
+                    <div id="previewContent" style="padding:20px;font-family:'AMS_Font','Courier New',monospace;font-size:1.5rem;line-height:2;min-height:80px;color:var(--text-sec);">Converted text preview will appear here...</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>KrutiDev vs AMS: What's the Difference?</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Feature</th><th>KrutiDev</th><th>AMS</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Type</td><td>Legacy Hindi font encoding</td><td>Calligraphy font system (Akshar Mala)</td></tr>
+                    <tr><td>Usage</td><td>Government docs, old typing</td><td>Wedding cards, posters, DTP</td></tr>
+                    <tr><td>Style</td><td>Plain, functional</td><td>Ornate, calligraphic</td></tr>
+                    <tr><td>Encoding</td><td>ASCII-based</td><td>ASCII-based (different mapping)</td></tr>
+                    <tr><td>Popularity</td><td>Very high (legacy standard)</td><td>High (creative industry)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="info-section">
+            <h2>Related Converters</h2>
+            <div class="features-grid">
+                <a href="/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>Unicode → AMS</h3>
+                    <p>Convert standard Devanagari to AMS font encoding.</p>
+                </a>
+                <a href="/ams-to-unicode/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>AMS → Unicode</h3>
+                    <p>Convert AMS text back to Unicode Devanagari.</p>
+                </a>
+                <a href="/ams-fonts/" class="feature-card" style="text-decoration:none;color:inherit;">
+                    <h3>AMS Fonts</h3>
+                    <p>Download free AMS calligraphy fonts.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ConvertAMSFont.com — <a href="/" style="color:var(--text-sec);">Free Online AMS Font Converter</a></p>
+        <p class="disclaimer"><a href="/privacy-policy/" style="color:var(--text-sec);">Privacy</a> · <a href="/terms-of-service/" style="color:var(--text-sec);">Terms</a> · This tool provides character encoding conversion only.</p>
+    </footer>
+
+    <script src="/js/ams-converter-engine.js"></script>
+    <script>
+    (function() {
+        // KrutiDev → Unicode → AMS conversion chain
+        // KrutiDev mapping (common characters)
+        const krutiToUni = {"§":"ँ","Å":"ं","‡":"ः","¶":"अ","+":"आ","J":"इ","u":"ई","†":"उ","­":"ऊ","¬":"ए","µ":"ऐ","ƒ":"ओ","Ð":"औ",",":"क","v":"ख","b":"ग","m":"घ","A":"ङ","h":"च","r":"छ","F":"ज","Y":"झ","M":"ञ","t":"ट","d":"ठ","[":"ड","H":"ढ","D":"ण","n":"त","o":"थ":"Ù":"थ","k":"द","e":"ध","q":"न","w":"प","i":"फ","x":"ब","g":"भ","W":"म",">":"य","S":"र","T":"ल","U":"ळ","c":"व","l":"श","U":"ष","K":"स","%":"ह","a":"ा","e":"ि","R":"ी","Z":"ु","I":"ू","E":"े","´":"ै","X":"ो","?":"ौ","\\":"्","V":"़","L":"ँ","_":"ॅ","^":"ॉ","|":"ृ","Q":"े","~":"ँ","©":"ं","à":"ः","ê":"अ","é":"आ","ô":"इ","ö":"ई","û":"उ","ü":"ऊ","ñ":"ए","å":"ऐ","è":"ओ","î":"औ","ó":"क","õ":"ख","ú":"ग","à":"घ","â":"ङ","ã":"च","ä":"छ","æ":"ज","ç":"झ","ê":"ञ","ë":"ट","ì":"ठ","í":"ड","î":"ढ","ï":"ण","ð":"त","ñ":"थ","ò":"द","ó":"ध","ô":"न","õ":"प","ö":"फ","ø":"ब","ù":"भ","ú":"म","û":"य","ü":"र","ý":"ल","þ":"ळ","ÿ":"व","Œ":"श","œ":"ष","´":"स","µ":"ह"};
+
+        // Build reverse map for Unicode→KrutiDev (for potential future use)
+        
+        function krutiDevToUnicode(text) {
+            // Strategy: try multi-char matches first, then single char
+            let result = '';
+            let i = 0;
+            while (i < text.length) {
+                // Try 2-char combinations first
+                let matched = false;
+                if (i + 1 < text.length) {
+                    const two = text[i] + text[i+1];
+                    if (krutiToUni[two]) {
+                        result += krutiToUni[two];
+                        i += 2;
+                        matched = true;
+                    }
+                }
+                if (!matched) {
+                    const one = text[i];
+                    if (krutiToUni[one]) {
+                        result += krutiToUni[one];
+                    } else {
+                        result += one; // keep as-is
+                    }
+                    i++;
+                }
+            }
+            return result;
+        }
+
+        function convertKrutiToAms(text) {
+            const unicode = krutiDevToUnicode(text);
+            return unicodeToAms(unicode);
+        }
+
+        const input = document.getElementById('krutidevInput');
+        const output = document.getElementById('amsOutput');
+        const preview = document.getElementById('previewContent');
+        const notification = document.getElementById('notification');
+        let nt = null;
+        function notify(m) { clearTimeout(nt); notification.textContent=m; notification.classList.add('show'); nt=setTimeout(()=>notification.classList.remove('show'),3000); }
+
+        function doConvert() {
+            if (!input.value) { output.value=''; preview.textContent='Converted text preview will appear here...'; preview.style.color='var(--text-sec)'; return; }
+            const amsText = convertKrutiToAms(input.value);
+            output.value = amsText;
+            preview.textContent = amsText;
+            preview.style.color = 'var(--text)';
+            notify('Conversion complete!');
+        }
+
+        document.getElementById('convertBtn').addEventListener('click', doConvert);
+        input.addEventListener('input', doConvert);
+        document.getElementById('pasteBtn').addEventListener('click', () => {
+            navigator.clipboard.readText().then(t => { input.value=t; doConvert(); }).catch(()=>notify('Use Ctrl+V'));
+        });
+        document.getElementById('clearInputBtn').addEventListener('click', () => { input.value=''; output.value=''; preview.textContent='Converted text preview will appear here...'; preview.style.color='var(--text-sec)'; });
+        document.getElementById('copyBtn').addEventListener('click', () => {
+            if (!output.value) { notify('Nothing to copy!'); return; }
+            navigator.clipboard.writeText(output.value).then(()=>notify('Copied!'));
+        });
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if (!output.value) return;
+            const b=new Blob([output.value],{type:'text/plain;charset=utf-8'});
+            const u=URL.createObjectURL(b);
+            const a=document.createElement('a'); a.href=u; a.download='ams-output.txt'; a.click();
+            URL.revokeObjectURL(u); notify('Downloaded!');
+        });
+        document.getElementById('clearOutputBtn').addEventListener('click', () => { output.value=''; });
+    })();
+    </script>
+</body>
+</html>
