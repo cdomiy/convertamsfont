@@ -251,19 +251,34 @@ function unicodeToAms(text, options = {}) {
 function buildAmsToUnicodeMap() {
   const reverseMap = new Map();
   
-  // Apply in same order as forward conversion: initial → patches
-  // Initial mapping
+  // Build reverse map from unicodeToAmsMap ONLY (patches are AMS→AMS, not Unicode→AMS)
+  // Convert all \u093f positions to "pre-swap" form (\u093f before consonant cluster)
+  // so the amsToUnicode swap regex can uniformly handle all \u093f positioning
   for (const [uni, ams] of unicodeToAmsMap) {
-    reverseMap.set(ams, uni);
+    let val = uni;
+    // Convert to pre-swap form: consonant_cluster + \u093f → \u093f + consonant_cluster
+    val = val.replace(/([\u0915-\u0939](?:\u094d[\u0915-\u0939])*)\u093f/g, '\u093f$1');
+    reverseMap.set(ams, val);
   }
   
-  // Patches override: these are applied AFTER initial mapping,
-  // so their results take precedence for the reverse map
-  for (const patch of mappingPatches) {
-    for (const [amsKey, amsVal] of patch) {
-      reverseMap.set(amsVal, amsKey);
-    }
-  }
+  // Nukta fixes: prefer non-nukta forms (AMS encoding is lossy for nukta)
+  reverseMap.set('k', '\u0915');   // \u0915 (not \u0915\u093c)
+  reverseMap.set('f', '\u092b');   // \u092b (not \u092b\u093c)
+  reverseMap.set('ja', '\u091c');  // \u091c (not \u091c\u093c)
+  reverseMap.set('D', '\u0921');   // \u0921 (not \u0921\u093c)
+  reverseMap.set('Z', '\u0922');   // \u0922 (not \u0922\u093c)
+  reverseMap.set('Ka', '\u0916');  // \u0916 (not \u0916\u093c)
+  
+  // Special symbol mappings (from patches, not in base reverse map)
+  reverseMap.set('@', '\u0930\u0941');             // \u0930\u0941
+  reverseMap.set('\u2666', '\u0926\u094d\u092f');   // \u2666 → \u0926\u094d\u092f
+  reverseMap.set('\u2666a', '\u0926\u094d\u092f\u093e'); // \u2666a → \u0926\u094d\u092f\u093e
+  reverseMap.set('\u2665', '\u0926\u094d\u0935');    // \u2665 → \u0926\u094d\u0935
+  reverseMap.set('\u2665a', '\u0926\u094d\u0935\u093e'); // \u2665a → \u0926\u094d\u0935\u093e
+  reverseMap.set('\u266b', '\u0939\u0943');          // \u266b → \u0939\u0943
+  reverseMap.set('^', '\u094d\u0930');               // ^ → \u094d\u0930
+  reverseMap.set('o^', '\u091f\u094d\u0930');         // o^ → \u091f\u094d\u0930
+  reverseMap.set('Mva', '\u0936\u094d\u0935');        // Mva → \u0936\u094d\u0935 (from patch Sva→Mva)
   
   return reverseMap;
 }
@@ -278,22 +293,46 @@ const amsToUnicodeMap = buildAmsToUnicodeMap();
 function amsToUnicode(amsText) {
   if (!amsText) return "";
   
-  // Sort by length descending for longest match
-  const sorted = Array.from(amsToUnicodeMap.entries()).sort((a, b) => b[0].length - a[0].length);
-  const pattern = sorted.map(([k]) => sp(k)).join("|");
-  const regex = new RegExp(pattern, "g");
-  const sortedMap = new Map(sorted);
+  // Step 1: Character-by-character longest-match mapping using reverse map
+  let result = '';
+  let i = 0;
+  const sortedKeys = Array.from(amsToUnicodeMap.entries())
+    .sort((a, b) => b[0].length - a[0].length);
+  const sortedMap = new Map(sortedKeys);
   
-  let result = amsText.replace(regex, (match) => sortedMap.get(match) || match);
-  
-  // Reverse the ि matra swap: ि+consonant → consonant+ि
-  // This is the inverse of handleMatras
-  for (const m of matrasToMove.left) {
-    // After AMS→Unicode, the matra (ि/i) will be before the consonant
-    // We need to swap it back: matra+consonant → consonant+matra
-    // This is complex in Unicode space; for now, the reverse mapping
-    // of the patches should handle most cases correctly
+  while (i < amsText.length) {
+    let matched = false;
+    for (const [key] of sortedMap) {
+      if (amsText.substring(i, i + key.length) === key) {
+        result += sortedMap.get(key);
+        i += key.length;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) {
+      result += amsText[i];
+      i++;
+    }
   }
+  
+  // Step 2: Clean up nukta remnants
+  result = result.replace(/f\u093c/g, '\u092b');
+  result = result.replace(/k\u093c/g, '\u0915');
+  result = result.replace(/j\u093c/g, '\u091c');
+  result = result.replace(/D\u093c/g, '\u0921');
+  result = result.replace(/Z\u093c/g, '\u0922');
+  result = result.replace(/K\u093c/g, '\u0916');
+  
+  // Step 3: Move \u0930\u094d (reph) before the syllable it follows
+  // In AMS, Q (\u0930\u094d) is placed AFTER the syllable it modifies.
+  // Combined pattern: consonant_cluster + (matra)? + \u0930\u094d → \u0930\u094d + consonant_cluster + (matra)?
+  result = result.replace(/([\u0915-\u0939](?:\u094d[\u0915-\u0939])*)([\u093e-\u094c\u0949\u0945])?\u0930\u094d/g, '\u0930\u094d$1$2');
+  
+  // Step 4: Swap \u093f after consonant cluster (single pass only)
+  // In AMS, \u093f appears before the consonant cluster (pre-swap form).
+  // Move it after: \u093f + consonant_cluster → consonant_cluster + \u093f
+  result = result.replace(/\u093f([\u0915-\u0939](?:\u094d[\u0915-\u0939])*)/g, '$1\u093f');
   
   return result;
 }
