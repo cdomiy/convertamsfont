@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>एएमएस फॉन्ट कनवर्टर - मुफ्त ऑनलाइन यूनिकोड से एएमएस फॉन्ट कनवर्टर</title>
+    <meta name="description" content="यूनिकोड देवनागरी टेक्स्ट को एएमएस फॉन्ट एन्कोडिंग में तुरंत बदलें। हिंदी, मराठी टाइपिंग के लिए मुफ्त ऑनलाइन एएमएस फॉन्ट कनवर्टर। कोई साइनअप नहीं।">
+    <link rel="canonical" href="https://convertamsfont.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="एएमएस फॉन्ट कनवर्टर - Free Online Unicode to AMS Converter">
+    <meta property="og:description" content="Convert Unicode Devanagari to AMS font encoding instantly. Free, fast, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://convertamsfont.com/">
+    
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "एएमएस फॉन्ट कनवर्टर",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "description": "Free online converter to transform Unicode Devanagari text to AMS font encoding for Hindi and Marathi typing.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Convert Unicode to AMS Font",
+        "description": "Step-by-step guide to convert Unicode Devanagari text to AMS font encoding online.",
+        "totalTime": "PT30S",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Paste or Type Unicode Text",
+                "text": "Enter your Hindi or Marathi text in Unicode (Devanagari script) in the input box. You can also use the built-in transliteration feature to type in English and get Devanagari text.",
+                "position": 1
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Click Convert",
+                "text": "Click the Convert button to transform your Unicode text to AMS font encoding. The conversion happens instantly in your browser.",
+                "position": 2
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Copy AMS Text",
+                "text": "Copy the converted AMS text and paste it into any application that supports AMS fonts. The text will display correctly when an AMS font is installed.",
+                "position": 3
+            }
+        ]
+    }
+    </script>
+
+    <!-- Hreflang for Hindi -->
+    <link rel="alternate" hreflang="hi" href="https://convertamsfont.com/">
+    <link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/">
+    <link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/hi/">एएमएस फॉन्ट कनवर्टर</a>
+            </div>
+            <div class="nav-links">
+                <a href="#converter">कनवर्टर</a>
+                <a href="#how-it-works">यह कैसे काम करता है</a>
+                <a href="/">English</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>मुफ्त ऑनलाइन एएमएस फॉन्ट कनवर्टर</h1>
+            <p>यूनिकोड देवनागरी टेक्स्ट को एएमएस फॉन्ट एन्कोडिंग में तुरंत बदलें। कोई साइनअप नहीं, कोई इंस्टॉल नहीं, 100% मुफ्त।</p>
+        </section>
+
+        <section id="converter" class="converter-section">
+            <div class="converter-container">
+                <!-- Input Area -->
+                <div class="input-panel">
+                    <div class="panel-header">
+                        <h2>Unicode Devanagari Input</h2>
+                        <div class="toolbar">
+                            <button id="pasteBtn" type="button" title="Paste from clipboard">📋 Paste</button>
+                            <button id="clearInputBtn" type="button" title="Clear input">✕ Clear</button>
+                        </div>
+                    </div>
+                    <div class="transliteration-bar">
+                        <span class="label">Type in English:</span>
+                        <div class="lang-buttons">
+                            <button class="lang-btn active" data-lang="hi">Hindi</button>
+                            <button class="lang-btn" data-lang="mr">Marathi</button>
+                            <button class="lang-btn" data-lang="off">Off</button>
+                        </div>
+                    </div>
+                    <textarea id="unicodeInput" placeholder="Type or paste Hindi text here... (नमस्ते)" rows="8" spellcheck="false"></textarea>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+
+                <!-- Convert Button -->
+                <div class="convert-action">
+                    <button id="convertBtn" type="button" class="convert-btn">Convert → AMS</button>
+                </div>
+
+                <!-- Output Area -->
+                <div class="output-panel">
+                    <div class="panel-header">
+                        <h2>AMS Font Output</h2>
+                        <div class="toolbar">
+                            <label class="v2-toggle" title="Switch between TTF and OTF font encoding">
+                                <input type="checkbox" id="v2Toggle">
+                                <span>OTF Mode</span>
+                            </label>
+                            <button id="copyBtn" type="button" title="Copy to clipboard">📋 Copy</button>
+                            <button id="clearOutputBtn" type="button" title="Clear output">✕ Clear</button>
+                        </div>
+                    </div>
+                    <textarea id="amsOutput" placeholder="AMS font text will appear here..." rows="8" readonly spellcheck="false"></textarea>
+                    <div id="notification" class="notification"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="info-section">
+            <h2>How एएमएस फॉन्ट कनवर्टर Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Paste or Type Unicode Text</h3>
+                    <p>Enter your Hindi or Marathi text in Devanagari script. You can also type in English and use our built-in transliteration to get Devanagari text automatically.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Instant Conversion</h3>
+                    <p>Our converter maps Unicode Devanagari characters to AMS font encoding. The conversion happens entirely in your browser — no data is sent to any server.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Copy & Use</h3>
+                    <p>Copy the AMS-encoded text and paste it into any application that uses AMS fonts. The text renders correctly when an AMS font is installed on your system.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>What is AMS Font Encoding?</h2>
+            <p>AMS (Akshar Mala System) is a legacy font encoding system widely used for Hindi and Marathi typing in India. Unlike Unicode, which assigns unique codepoints to each character, AMS fonts use ASCII positions (0x20-0x7E) to represent Devanagari glyphs. This means you need a converter to transform standard Unicode text into AMS-encoded text that renders correctly with AMS fonts.</p>
+            
+            <h3>AMS vs Unicode: Key Differences</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>AMS Font</th>
+                        <th>Unicode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Encoding</td>
+                        <td>ASCII-based (0x20-0x7E)</td>
+                        <td>Unicode (U+0900-U+097F)</td>
+                    </tr>
+                    <tr>
+                        <td>Compatibility</td>
+                        <td>Requires AMS font installed</td>
+                        <td>Universal standard</td>
+                    </tr>
+                    <tr>
+                        <td>Search Engine</td>
+                        <td>Not searchable</td>
+                        <td>Fully searchable</td>
+                    </tr>
+                    <tr>
+                        <td>Usage</td>
+                        <td>Legacy printing, DTP</td>
+                        <td>Web, modern apps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="info-section">
+            <h2>Supported Conversions</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Unicode → AMS</h3>
+                    <p>Convert standard Devanagari Unicode text to AMS font encoding. Supports all Hindi and Marathi characters including conjuncts (संयुक्ताक्षर).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>English → Devanagari</h3>
+                    <p>Type in English and get Devanagari text instantly with our built-in transliteration feature powered by Google Input Tools.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>TTF & OTF Modes</h3>
+                    <p>Switch between AMS TTF and OTF font encoding modes. Some AMS fonts use slightly different encodings — our converter supports both.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>100% Client-Side</h3>
+                    <p>All conversion happens in your browser. Your text is never sent to any server — complete privacy guaranteed.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ConvertAMSFont.com — मुफ्त ऑनलाइन एएमएस फॉन्ट कनवर्टर</p>
+        <p class="disclaimer">This tool provides character encoding conversion only. Users are responsible for obtaining proper font licenses for any proprietary fonts they use.</p>
+    </footer>
+
+    <script src="/js/ams-converter-engine.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
