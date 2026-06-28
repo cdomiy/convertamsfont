@@ -50,7 +50,28 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://convertamsfont.com/hi/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/"/>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://convertamsfont.com/blog/what-is-ams-font/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/what-is-ams-font/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/blog/what-is-ams-font/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/what-is-ams-font/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -63,6 +84,18 @@
   </url>
   <url>
     <loc>https://convertamsfont.com/blog/ams-vs-unicode/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/ams-vs-unicode/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/blog/ams-vs-unicode/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/ams-vs-unicode/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
