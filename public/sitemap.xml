@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -24,7 +24,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/ams-to-unicode/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/ams-to-unicode/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/ams-to-unicode/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/ams-to-unicode/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/ams-to-unicode/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/ams-to-unicode/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/ams-to-unicode/"/>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,19 +42,43 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/krutidev-to-ams/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/krutidev-to-ams/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/krutidev-to-ams/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/krutidev-to-ams/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/krutidev-to-ams/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/krutidev-to-ams/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/krutidev-to-ams/"/>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/unicode-to-ams/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/unicode-to-ams/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/"/>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/ams-fonts/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://convertamsfont.com/faq/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://convertamsfont.com/blog/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -54,7 +87,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -63,7 +96,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/what-is-ams-font/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -72,13 +105,25 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/what-is-ams-font/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/what-is-ams-font/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/blog/how-to-use-ams-in-coreldraw/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/how-to-use-ams-in-coreldraw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/how-to-use-ams-in-coreldraw/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/how-to-use-ams-in-coreldraw/"/>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/blog/how-to-use-ams-in-coreldraw/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/how-to-use-ams-in-coreldraw/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/how-to-use-ams-in-coreldraw/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/how-to-use-ams-in-coreldraw/"/>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -87,7 +132,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/ams-vs-unicode/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -96,37 +141,61 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/ams-vs-unicode/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/ams-vs-unicode/"/>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/blog/best-ams-fonts-wedding/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/best-ams-fonts-wedding/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/best-ams-fonts-wedding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/best-ams-fonts-wedding/"/>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/blog/best-ams-fonts-wedding/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/best-ams-fonts-wedding/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/best-ams-fonts-wedding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/best-ams-fonts-wedding/"/>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/blog/ams-font-keyboard-layout/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/ams-font-keyboard-layout/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/ams-font-keyboard-layout/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/ams-font-keyboard-layout/"/>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://convertamsfont.com/hi/blog/ams-font-keyboard-layout/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://convertamsfont.com/blog/ams-font-keyboard-layout/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://convertamsfont.com/hi/blog/ams-font-keyboard-layout/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://convertamsfont.com/blog/ams-font-keyboard-layout/"/>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/about/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/privacy-policy/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://convertamsfont.com/terms-of-service/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
